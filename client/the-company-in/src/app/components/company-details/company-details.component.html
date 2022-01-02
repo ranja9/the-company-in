@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Company Details</h1>
+  <div *ngIf="companyInfo">
+    <div><img [src]="companyInfo.logo" class="logo" /></div>
+    <div><span class="label">name:</span> {{ companyInfo.name }}</div>
+    <div><span class="label">domain:</span> {{ companyInfo.domain }}</div>
+    <div>
+      <span class="label">description:</span> {{ companyInfo.description }}
+    </div>
+    <div>
+      <span class="label">industry:</span> {{ companyInfo.category.industry }}
+    </div>
+    <div>
+      <span class="label">market cap :</span>
+      {{ companyInfo.metrics.marketCap }}
+    </div>
+    <div>
+      <span class="label">annual revenue:</span>
+      {{ companyInfo.metrics.annualRevenue }}
+    </div>
+    <div><span class="label">location:</span> {{ companyInfo.location }}</div>
+    <div>
+      <span class="label">number of employees :</span>
+      {{ companyInfo.metrics.employees }}
+    </div>
+  </div>
+</div>

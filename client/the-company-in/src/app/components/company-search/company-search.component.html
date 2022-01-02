@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Company Search</h1>
+  <form #form="ngForm">
+    <div class="form-group">
+      <label>Company Domain</label>
+      <input
+        type="text"
+        class="form-control"
+        id="company-domain"
+        name="company-domain"
+        required
+        [(ngModel)]="companyDomain"
+      />
+    </div>
+    <button (click)="submit()" [disabled]="!form.valid" class="mt-2">
+      Submit
+    </button>
+    <button
+      (click)="reset()"
+      [disabled]="!companyService.companies.length"
+      class="mt-2 ml-4"
+    >
+      Reset
+    </button>
+  </form>
+  <ul class="mt-5">
+    <li *ngFor="let company of companyService.companies">
+      <a href="" [routerLink]="['/company-details', company.id]"
+        ><img [src]="company.logo" class="logo" /> {{ company.name }} ,{{
+          company.type
+        }}
+      </a>
+    </li>
+  </ul>
+</div>
